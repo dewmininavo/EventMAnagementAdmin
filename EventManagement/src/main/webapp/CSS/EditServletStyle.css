@@ -1,0 +1,93 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/Updateimage.JPG'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/Updateimage.JPG'); /* Path to your background image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(1px); /* Optional blur effect */
+    z-index: -1; /* Keep the background behind the content */
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Makes sure it's centered vertically */
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Heading */
+h1 {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: #45a049;
+}
+
+/* Input Fields */
+input[type="text"], select, textarea {
+    width: 100%; /* Adjust the width to a smaller percentage */
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    box-sizing:40;
+    font-size: 16px;
+    
+}
+
+/* Button */
+input[type="submit"] {
+    display: block;           /* Makes the button a block-level element */
+    width: 50%;               /* Button width as 50% */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px auto;        /* Centers the button horizontally */
+    text-align: center;       /* Ensures text is centered inside the button */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Link to View Employees */
+a {
+    text-decoration: none;
+    color: #000000;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+}

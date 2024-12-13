@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Add New Event</title>
+    <script type="text/javascript">
+        function validateForm() {
+            // Get form values
+            var eventName = document.forms["eventForm"]["eventname"].value;
+            var description = document.forms["eventForm"]["description"].value;
+            var eventType = document.forms["eventForm"]["eventtype"].value;
+
+            // Check if event name is at least 3 characters long
+            if (eventName.length < 3) {
+                alert("Event Name must be at least 3 characters long.");
+                return false; // Prevent form submission if validation fails
+            }
+
+            // Check if event type is selected
+            if (eventType === "") {
+                alert("Please select an event type.");
+                return false; // Prevent form submission if validation fails
+            }
+
+            // Check if description is at least 3 characters long and no more than 100 characters
+            if (description.length < 3 || description.length > 100) {
+                alert("Description must be between 3 and 100 characters long.");
+                return false; // Prevent form submission if validation fails
+            }
+
+            // Check for special characters in event name and description
+            var specialChars = /[!@#$%^&*(),.?":{}|<>]/;
+            if (specialChars.test(eventName) || specialChars.test(description)) {
+                alert("Event Name and Description must not contain special characters.");
+                return false; // Prevent form submission if validation fails
+            }
+
+            // If all validations pass
+            return true; // Allow form submission
+        }
+
+        // Show success message if redirected with success parameter
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success')) {
+                alert("Event saved successfully!");
+            }
+        };
+    </script>
+</head>
+<body>
+
+    <h1>Add New Event</h1>
+    <form name="eventForm" action="SaveServlet" method="post" onsubmit="return validateForm()">
+        <table>
+            <tr>
+                <td>Event Name:</td>
+                <td><input type="text" name="eventname" required/></td>
+            </tr>
+            <tr>
+                <td>Event Type:</td>
+                <td>
+                    <select name="eventtype" style="width: 150px" required>
+                        <option value="" disabled selected>Select event type</option>
+                        <option value="Wedding">Wedding</option>
+                        <option value="Birthday">Birthday</option>
+                        <option value="Conferences">Conferences</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><input type="text" name="description" required/></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" value="Save Event" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <br />
+    <a href="ViewServlet">View Events</a>
+
+</body>
+</html>

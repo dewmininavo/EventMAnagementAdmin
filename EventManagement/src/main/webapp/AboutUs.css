@@ -1,0 +1,55 @@
+body {
+  background-image: url("EAboutus.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  margin-top: 120px;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('images/EAboutus.png'); /* Your background image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px); /* Adjust the blur value as needed */
+    z-index: -1; /* Ensure the background stays behind other content */
+}
+
+.t2 {
+  color: rgb(235, 247, 7);
+}
+
+h2 {
+  font-family: "Comic Sans MS", cursive;
+  width: 900px;
+}
+
+#btn {
+  background-color: rgb(5, 242, 24);
+  color: black;
+  font-size: 16px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#btn:hover {
+  background-color: white;
+}
+
+.about {
+  background: #00000091;
+  height: 70%;
+  width: 60%;
+  padding: 10px 5px 5px 5px;
+  border-radius: 20px;
+  opacity: 95%;
+}
